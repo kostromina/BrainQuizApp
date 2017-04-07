@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
     public static final String VALID_TAG_VALUE = "valid";
     private RadioGroup mQuestion1, mQuestion2, mQuestion3, mQuestion4, mQuestion5, mQuestion6,
@@ -57,74 +57,65 @@ public class MainActivity extends AppCompatActivity{
 
     private void submitButtonPressed() {
         int mResult = 0;
-        if(mQuestion1.getCheckedRadioButtonId() == R.id.answer_1a) {
+        if (mQuestion1.getCheckedRadioButtonId() == R.id.answer_1a) {
             mResult += 10;
-        }
-        else if (mQuestion1.getCheckedRadioButtonId() == -1) {
+        } else if (mQuestion1.getCheckedRadioButtonId() == -1) {
             showError();
             return;
         }
 
-        if(mQuestion2.getCheckedRadioButtonId() == R.id.answer_2c) {
+        if (mQuestion2.getCheckedRadioButtonId() == R.id.answer_2c) {
             mResult += 10;
-        }
-        else if (mQuestion2.getCheckedRadioButtonId() == -1) {
+        } else if (mQuestion2.getCheckedRadioButtonId() == -1) {
             showError();
             return;
         }
 
-        if(mQuestion3.getCheckedRadioButtonId() == R.id.answer_3b) {
+        if (mQuestion3.getCheckedRadioButtonId() == R.id.answer_3b) {
             mResult += 10;
-        }
-        else if (mQuestion3.getCheckedRadioButtonId() == -1) {
+        } else if (mQuestion3.getCheckedRadioButtonId() == -1) {
             showError();
             return;
         }
 
-        if(mQuestion4.getCheckedRadioButtonId() == R.id.answer_4a) {
+        if (mQuestion4.getCheckedRadioButtonId() == R.id.answer_4a) {
             mResult += 10;
-        }
-        else if (mQuestion4.getCheckedRadioButtonId() == -1) {
+        } else if (mQuestion4.getCheckedRadioButtonId() == -1) {
             showError();
             return;
         }
 
-        if(mQuestion5.getCheckedRadioButtonId() == R.id.answer_5b) {
+        if (mQuestion5.getCheckedRadioButtonId() == R.id.answer_5b) {
             mResult += 10;
-        }
-        else if (mQuestion5.getCheckedRadioButtonId() == -1) {
+        } else if (mQuestion5.getCheckedRadioButtonId() == -1) {
             showError();
             return;
         }
 
-        if(mQuestion6.getCheckedRadioButtonId() == R.id.answer_6c) {
+        if (mQuestion6.getCheckedRadioButtonId() == R.id.answer_6c) {
             mResult += 10;
-        }
-        else if (mQuestion6.getCheckedRadioButtonId() == -1) {
+        } else if (mQuestion6.getCheckedRadioButtonId() == -1) {
             showError();
             return;
         }
 
-        if(mQuestion7.getCheckedRadioButtonId() == R.id.answer_7c) {
+        if (mQuestion7.getCheckedRadioButtonId() == R.id.answer_7c) {
             mResult += 10;
-        }
-        else if (mQuestion7.getCheckedRadioButtonId() == -1) {
+        } else if (mQuestion7.getCheckedRadioButtonId() == -1) {
             showError();
             return;
         }
 
-        if(mQuestion8.getCheckedRadioButtonId() == R.id.answer_8a) {
+        if (mQuestion8.getCheckedRadioButtonId() == R.id.answer_8a) {
             mResult += 10;
-        }
-        else if (mQuestion8.getCheckedRadioButtonId() == -1) {
+        } else if (mQuestion8.getCheckedRadioButtonId() == -1) {
             showError();
             return;
         }
 
-        if(mQuestion9.getCheckedRadioButtonId() == R.id.answer_9a) {
+        if (mQuestion9.getCheckedRadioButtonId() == R.id.answer_9a) {
             mResult += 10;
-        }
-        else if (mQuestion9.getCheckedRadioButtonId() == -1) {
+        } else if (mQuestion9.getCheckedRadioButtonId() == -1) {
             showError();
             return;
         }
@@ -151,7 +142,7 @@ public class MainActivity extends AppCompatActivity{
         displayMessage(mResult);
     }
 
-    void displayMessage(int score){
+    void displayMessage(int score) {
         String userName = customerNameEditText.getText().toString();
         String message = "Dear " + userName + ",\nYour score is: " + String.valueOf(score) + " ofÅ 100";
         message += "\n" + quizResultMessage(score);
@@ -159,22 +150,19 @@ public class MainActivity extends AppCompatActivity{
         new AlertDialog.Builder(this).setMessage(message).show();
     }
 
-    String quizResultMessage (int score) {
+    String quizResultMessage(int score) {
         if (score <= 40) {
             return getString(R.string.result_0_40);
-        }
-        else if (score > 40 && score <= 60) {
+        } else if (score > 40 && score <= 60) {
             return getString(R.string.result_50_60);
-        }
-        else if (score > 60 && score <= 90) {
+        } else if (score > 60 && score <= 90) {
             return getString(R.string.result_70_90);
-        }
-        else  {
+        } else {
             return getString(R.string.result_90_100);
         }
     }
 
-    void showError(){
+    void showError() {
         // Show an error message as a toast
         Toast.makeText(this, "Please select answers to all questions.", Toast.LENGTH_SHORT).show();
     }
